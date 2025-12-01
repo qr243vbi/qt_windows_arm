@@ -32,7 +32,7 @@ jobs:
           token: ${{ github.token }}
 
       - name: Upload vcpkg cache as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         with:
           name: my-artifact  # Name of the artifact
           path: ./vcpkg
