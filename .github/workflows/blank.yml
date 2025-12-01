@@ -27,6 +27,12 @@ jobs:
         uses: johnwason/vcpkg-action@v7
         id: vcpkg
         with:
-          pkgs: qtgrpc
+          pkgs: qtgrpc qtcharts qtdeclarative qtbase qtgui
           triplet: arm64-windows
           token: ${{ github.token }}
+
+      - name: Upload vcpkg cache as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact  # Name of the artifact
+          path: ./vcpkg
